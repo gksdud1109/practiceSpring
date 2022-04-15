@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+
+    <form role="form" action="/enroll" method="post">
+
+        <div class="form-group">
+            <label for="member">등록회원</label>
+            <select name="memberId" id="member" class="form-control">
+                <option value="">회원선택</option>
+                <tr th:each="member : ${members}">
+                    <td>
+                        <option th:text="${member.id}"></option>
+                    </td>
+                </tr>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="event">행사목록</label>
+            <select name="eventId" id="event" class="form-control">
+                <option value="">행사선택</option>
+                <tr th:each="event : ${events}">
+                    <td>
+                        <option th:text="${event.id}"></option>
+                    </td>
+                </tr>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <br/>
+</div> <!-- /container -->
+
+</body>
+</html>

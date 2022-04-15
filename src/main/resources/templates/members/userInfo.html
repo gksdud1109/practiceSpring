@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+
+    <form th:action="@{/members/userInfo/} + ${id}" method="post">
+
+        <div class="form-group">
+            <tr th:each="tag : ${tags}">
+                <td>
+                    <input type="checkbox" th:value="${tag.id}" th:text="${tag.name}"></input>
+                </td>
+            </tr>
+        </div>
+
+        <button type="submit">수정</button>
+
+    </form>
+
+</div> <!-- /container -->
+</body>
+</html>
